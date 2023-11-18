@@ -1,0 +1,33 @@
+form {
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: center; 
+    max-width: 300px; 
+  
+    label {
+      margin-bottom: 8px;
+    }
+  
+    input {
+      border-radius: 8px;
+      border: 1px solid rgba(141, 153, 174, 0.40);
+      background: rgba(237, 242, 244, 0.40);
+      margin-bottom: 16px;
+      padding: var(--m0, 0px) var(--m3, 30px);
+      width: 360px; 
+      height: var(--m5, 50px);
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+  
+    button {
+      padding: 10px var(--m4, 40px);;
+      width: 360px;
+
+      &.registration-button {
+        background-color: #5680E9;
+        color: white;
+      }
+    }
+  }
