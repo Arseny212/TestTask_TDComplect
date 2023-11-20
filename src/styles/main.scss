@@ -1,10 +1,73 @@
-form {
-    display: flex;
-    border-radius: 8px;
-    flex-direction: column;
-    align-items: center; 
-    max-width: 300px; 
-  
+body {
+display: flex;
+padding: var(--m10, 100px) var(--m0, 0px);
+justify-content: center;
+align-items: center;
+gap: var(--m10, 100px);
+flex: 1 0 0;
+align-self: stretch;
+background-color: #f6f8fe
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--m4, 40px); 
+}
+
+.form-title {
+  color: var(--Black-blue, #2B2D42);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.form-container {
+  display: flex;
+  padding: var(--m10, 100px) var(--m6, 60px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--m4, 40px);
+  border-radius: var(--m4, 40px);
+  border: 1px solid rgba(141, 153, 174, 0.40);
+  background: var(--white, #FFF);
+  box-shadow: 0px 0px 40px 0px rgba(141, 153, 174, 0.05);
+
+}
+
+.password-input-container {
+  position: relative;
+  width: 400px;
+  justify-content: space-between;
+}
+
+.password-input-container input{
+  width: calc(100% - 40px);
+  padding-right: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(141, 153, 174, 0.40);
+  background: rgba(237, 242, 244, 0.40);
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.password-toggle-button {
+  position: absolute;
+  top: 25%;
+  right: 30px;
+  width: 24px;
+  flex-shrink: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+   
     label {
       margin-bottom: 8px;
     }
@@ -22,12 +85,14 @@ form {
     }
   
     button {
-      padding: 10px var(--m4, 40px);;
+      padding: 10px var(--m4, 40px);
       width: 360px;
 
       &.registration-button {
+        padding: 10px var(--m4, 40px);
+        width: 360px;
         background-color: #5680E9;
         color: white;
       }
     }
-  }
+  
