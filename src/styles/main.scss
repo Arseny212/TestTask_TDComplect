@@ -82,6 +82,11 @@ background-color: #f6f8fe
       height: var(--m5, 50px);
       justify-content: space-between;
       box-sizing: border-box;
+      
+    }
+    .error-messages {
+      color: red;
+      margin-top: 5px;
     }
   
     button {

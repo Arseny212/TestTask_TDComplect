@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="image-container">
-      <img src="src/assets/man.svg" alt="Мужчинка с кофе" class="svg-icon" />
+      <img src="@/assets/man.svg" alt="Мужчинка с кофе" class="svg-icon" />
     </div>
     <div class="form-container">
       <div class="form-title">Регистрация</div>
@@ -106,6 +106,14 @@ export default {
     };
 
     const validateConfirmPassword = () => {
+      const confirmPasswordValue = confirmPassword.value;
+      const passwordValue = password.value;
+
+      if (confirmPasswordValue !== passwordValue) {
+
+    return;
+  }  
+
       validate('confirmPassword', confirmPassword.value, {
         required: true,
         minLength: 3,

@@ -36,10 +36,3 @@
     },
   };
   </script>
-  
-  <style>
-  .error-messages {
-    color: red;
-    margin-top: 5px;
-  }
-  </style>

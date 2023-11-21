@@ -1,4 +1,5 @@
 import { ref, computed } from 'vue';
+import * as Vue from 'vue';
 
 const useValidate = () => {
 
@@ -28,6 +29,12 @@ const useValidate = () => {
 
     if (rules.confirmPassword && value !== rules.passwordValue) {
       fieldErrors.push(`Пароли не совпадают!`);
+    }
+
+    if (!errors.value[fieldName]) {
+      Vue.set(errors.value, fieldName, fieldErrors);
+    } else {
+      errors.value[fieldName] = fieldErrors;
     }
 
     errors.value[fieldName] = fieldErrors;
