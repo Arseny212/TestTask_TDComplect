@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="image-container">
-      <img src="@/assets/man.svg" alt="Мужчинка с кофе" class="svg-icon" />
+      <img src="../assets/man.svg" alt="Мужчинка с кофе" class="svg-icon" />
     </div>
     <div class="form-container">
       <div class="form-title">Регистрация</div>
@@ -43,7 +43,7 @@
             minlength="3"
             autocomplete="new-password"
           />
-          <button class="password-toggle-button" @click="togglePasswordVisibility">
+          <button class="password-toggle-button" @click.prevent="togglePasswordVisibility">
             <img :src="showPassword ? 'src/assets/Eye2.svg' : 'src/assets/Eye1.svg'" alt="Toggle Password" />
           </button>
         </div>
@@ -63,7 +63,7 @@
             minlength="3"
             autocomplete="new-password"
           />
-          <button class="password-toggle-button" @click="togglePasswordVisibility">
+          <button class="password-toggle-button" @click.prevent="togglePasswordVisibility">
             <img :src="showPassword ? 'src/assets/Eye2.svg' : 'src/assets/Eye1.svg'" alt="Toggle Password" />
           </button>
         </div>
@@ -111,27 +111,17 @@ export default {
 
       if (confirmPasswordValue !== passwordValue) {
 
+    validate('confirmPassword', confirmPassword.value, {
+      required: true,
+      minLength: 3,
+      maxLength: 20,
+      confirmPassword: password.value,
+    });
+} else {
+  errors.value.confirmPassword = [];
+}
     return;
-  }  
-
-      validate('confirmPassword', confirmPassword.value, {
-        required: true,
-        minLength: 3,
-        maxLength: 20,
-        confirmPassword: password.value,
-      });
-    };
-
-    const isFormInvalid = computed(() => {
-  const errorsValue = errors.value;
-  return (
-    !!errorsValue &&
-    (!!errorsValue.username?.length ||
-      !!errorsValue.email?.length ||
-      !!errorsValue.password?.length ||
-      !!errorsValue.confirmPassword?.length)
-  );
-});
+};
 
     watch(username, () => {
       validateUsername();
@@ -159,10 +149,21 @@ export default {
     };
 
     const submitForm = () => {
+      if (!isFormInvalid.value) {
       console.log('Форма отправлена');
       router.push('/success');
-    };
-
+    }
+  };
+  const isFormInvalid = computed(() => {
+  const errorsValue = errors.value;
+  return (
+    !!errorsValue &&
+    (!!errorsValue.username?.length ||
+      !!errorsValue.email?.length ||
+      !!errorsValue.password?.length ||
+      !!errorsValue.confirmPassword?.length)
+  );
+});
     return {
       username,
       email,
@@ -178,5 +179,5 @@ export default {
       isFormInvalid,
     };
   },
-};
+}
 </script>

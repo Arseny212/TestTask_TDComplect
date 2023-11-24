@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 import RegistrationForm from './components/RegistrationForm.vue';
 import './styles/main.scss';
 
