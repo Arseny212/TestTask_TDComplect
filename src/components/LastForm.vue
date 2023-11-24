@@ -46,6 +46,6 @@
 
 <script>
 export default {
-  name: "YourComponentName",
+  name: "123",
 };
 </script>
