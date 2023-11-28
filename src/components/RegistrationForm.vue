@@ -21,14 +21,20 @@
           />
         </div>
         <div v-if="usernameErrors && usernameErrors.length" class="error-messages">
-          <div v-for="error in usernameErrors" :key="error" class="error-message">{{ error }}</div>
+          <div v-for="error in usernameErrors" :key="error" class="error-message">
+          <img src="@/assets/Error.svg" alt="Иконка ошибки" class="Error-img" />
+          {{ error }}
+          </div>
         </div>
 
         <div>
           <input v-model="email" type="email" placeholder="Email:" id="email" required autocomplete="email" />
         </div>
         <div v-if="emailErrors && emailErrors.length" class="error-messages">
-          <div v-for="error in emailErrors" :key="error" class="error-message">{{ error }}</div>
+          <div v-for="error in emailErrors" :key="error" class="error-message">
+            <img src="@/assets/Error.svg" alt="Иконка ошибки" class="Error-img" />
+          {{ error }}
+          </div>
         </div>
 
         <div class="password-input-container">
@@ -48,7 +54,10 @@
           </button>
         </div>
         <div v-if="passwordErrors && passwordErrors.length" class="error-messages">
-          <div v-for="error in passwordErrors" :key="error" class="error-message">{{ error }}</div>
+          <div v-for="error in passwordErrors" :key="error" class="error-message">
+            <img src="@/assets/Error.svg" alt="Иконка ошибки" class="Error-img" />
+          {{ error }}
+          </div>
         </div>
 
         <div class="password-input-container">
@@ -68,7 +77,10 @@
           </button>
         </div>
         <div v-if="confirmPasswordErrors && confirmPasswordErrors.length" class="error-messages">
-          <div v-for="error in confirmPasswordErrors" :key="error" class="error-message">{{ error }}</div>
+          <div v-for="error in confirmPasswordErrors" :key="error" class="error-message">
+            <img src="@/assets/Error.svg" alt="Иконка ошибки" class="Error-img" />
+          {{ error }}
+          </div>
         </div>
 
         <button :disabled="isFormInvalid" type="submit" class="registration-button">Зарегистрироваться</button>

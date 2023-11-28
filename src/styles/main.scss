@@ -3,60 +3,66 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: rF6F8FE(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (prefers-color-scheme: light) {
-    color: #213547;
-    background-color: #ffffff;
+  @media (max-width: 700px) {
+
+    
+    .image-container {
+      display: none;
+    }
+    .body {
+      overflow: hidden;
+      max-height: 300px;
+      
+    }
+    h1 {
+      color: var(--Black-blue, #2B2D42);
+      font-family: Inter;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    
+    .container {
+      height: 698px;
+      flex-direction: column;    
+    }
+
+    .form-container {
+      padding: var(--m10, 100px) var(--m6, 60px);
+      overflow: hidden;
+      height: 50vh;
+    }
+
+    .password-input-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--m2, 20px);
+    }
+
+    .password-input-container input {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-
-
-}
-
-button {
-  cursor: pointer;
-  transition: border-color 0.25s;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-
-  &:focus,
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-
-  @media (prefers-color-scheme: light) {
-    background-color: #f9f9f9;
-  }
-}
-
-body {
-  margin: 0;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
+
+  color: var(--Black-blue, #2B2D42);
   font-size: 28px;
   line-height: 1.1;
-}
-
-.card {
-  padding: 2em;
 }
 
 #app {
@@ -65,8 +71,6 @@ h1 {
   padding: 2rem;
   text-align: center;
 }
-
-// Стили из SCSS
 
 body {
   display: flex;
@@ -81,9 +85,10 @@ body {
 
 .container {
   display: flex;
+  padding: var(--m10, 100px) var(--m0, 0px);
   justify-content: center;
   align-items: center;
-  gap: var(--m4, 40px);
+  gap: var(--m4, 100px);
 }
 
 .form-title {
@@ -135,6 +140,7 @@ body {
   outline: none;
   padding: 0;
   margin: 0;
+
   &:focus,
   &:focus-visible {
     outline: none;
@@ -158,18 +164,45 @@ input {
 }
 
 .error-messages {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 6px;
   color: red;
-  margin-top: 5px;
+  font-size: 14px;
+}
+
+.Error-img {
+  margin-right: 5px;
+  vertical-align: middle; 
 }
 
 button {
+  cursor: pointer;
+  border-radius: 8px;
+  transition: border-color 0.25s;
   padding: 10px var(--m4, 40px);
-  width: 360px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
 
   &.registration-button {
+    justify-content: center;
+    align-items: center;
     padding: 10px var(--m4, 40px);
+    height: var(--m5, 50px);
     width: 360px;
     background-color: #5680E9;
     color: white;
+    gap: var(--m1, 10px);
+    align-self: stretch;
+    box-shadow: 0px 0px 10px 0px rgba(141, 153, 174, 0.20);
   }
 }

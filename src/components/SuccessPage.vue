@@ -4,8 +4,9 @@
       <h1>Вы успешно прошли регистрацию!</h1>
     </div>
   </template>
-  <script>
 
+  
+<script>
   export default {
     mounted() {
       setTimeout(() => {
