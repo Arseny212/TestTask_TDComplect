@@ -5,6 +5,9 @@
     </div>
   </template>
 
+<style lang="scss" scoped>
+  @import "../styles/SuccessPage.scss";
+</style>
   
 <script>
   export default {

@@ -1,0 +1,21 @@
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border-radius: var(--m0, 0px);
+    background: var(--mono-Light-blue, #F6F8FE)
+  }
+  
+  img {
+    max-width: 100%;
+  }
+
+  h1 {
+
+    color: var(--Black-blue, #2B2D42);
+    font-size: 28px;
+    line-height: 1.1;
+  }
+  
